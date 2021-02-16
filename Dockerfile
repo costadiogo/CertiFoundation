@@ -1,17 +1,19 @@
 # Imagem base
-FROM node:14-alpine
+FROM node:latest
 
 # Configuração do usuário/permissões
-USER node
-WORKDIR /home/node/
+WORKDIR /user/app/
 
 # Instalação das dependências
-COPY package.json .
-COPY yarn.lock .
+COPY package*.json ./
+COPY yarn.lock ./
 RUN yarn install
 
 # Copia dos arquivos do projeto
-COPY . .
+COPY . ./
+
+#Expondo a porta do servidor
+EXPOSE 3000 
 
 # Execução
 CMD ["yarn", "start"]
