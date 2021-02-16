@@ -47,19 +47,91 @@ Go to the project directory:
 
 ### Start without Docker
 
-<p>No seu terminal digite o comando: </br></br>
 
-yarn install </br></br>
+In your terminal type:
 
-para instalar as dependências</p></br>
+```
+> yarn install
+``` 
+This command will install the dependencies and create the node_modules folder
 
-<p>Depois de todas as dependências instaladas agora vamos inicializar o servidor</p></br>
 
-<p>No seu terminal digite o comando: </br></br>
+After installing the dependencies we will start the server
 
-yarn start </br></br>
+In your terminal type:
 
-para iniciar o servidor</p></br></br>
+```
+> yarn start
+``` 
+
+This command will start the http server.
+
+
+If everything has worked out so far in your terminal the following command will appear:
+
+```
+   Test Main route from API
+     Test GET route 
+       ✓ Should return an message home route
+ 
+   Test GET route for return a number in full 
+     Test GET/:id route
+      ✓ Should return a number in full
+
+
+> Server started at http://localhost:3000
+``` 
+## Testing the application
+
+Then open your browser and in the url type:
+
+http://localhost:3000/1
+
+Your return should be:
+
+{ "extenso": "um" }
+
+### Start with Docker
+
+In your terminal type:
+
+```
+> docker-compose up
+``` 
+
+This command will install the dependencies, run the tests and boot the server
+
+If everything has worked out so far in your terminal the following command will appear:
+```
+Starting certifoundation_app_1 ... done
+Attaching to certifoundation_app_1
+app_1  | yarn run v1.22.5
+app_1  | $ mocha --timeout 10000 && node server.js
+app_1  | 
+app_1  | 
+app_1  |   Test Main route from API
+app_1  |     Test GET route 
+app_1  |       ✓ Should return an message home route
+app_1  | 
+app_1  |   Test GET route for return a number in full 
+app_1  |     Test GET/:id route
+app_1  |       ✓ Should return a number in full
+app_1  | 
+app_1  | 
+app_1  |   2 passing (34ms)
+app_1  | 
+app_1  | Server started at http://localhost:3000
+```
+
+## Testing the application
+
+Then open your browser and in the url type:
+
+http://localhost:3000/1
+
+Your return should be:
+
+{ "extenso": "um" }
 
 
 
